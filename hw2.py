@@ -77,3 +77,70 @@ elif i >= 1 or i <= 12:
     print("зима")
 else:
     print("В году 12 месяцев :)")
+
+#8 и 13
+
+def max(a, b, c):
+    if (type(a) == int and type(b) == int and type(c) == int):
+        if (a >= b and a >= c):
+            return a#** 2 
+        elif (b >= a and b >= c):
+            return b#** 2
+        elif (c >= a and c >= b):
+            return c#** 2
+    else:
+        return "Необходимо ввести только цифры в виде (1, 2, 3)"
+        
+print(max(1, 2, 3))
+
+print(max([1,2,3], "a", 1))
+
+#9 - 14
+s = input("Введите строку: ")
+f = lambda x: x[::-1]#.upper()
+print(f(s))
+
+#10
+def factorial(n):
+    if (type(n) == int):
+        if n == 1:
+            return 1
+        return factorial(n - 1) * n
+    else:
+        return "Необходимо ввести только число"
+
+print(factorial(5))
+print(factorial("1"))
+
+#11
+def unique_list(l):
+    if (type(l) == list):
+        t = [] 
+        for x in l: 
+            if x not in t: 
+                t.append(x) 
+        l = t
+        return t
+    else:
+        return "Необходимо ввести список"
+
+l= [1, 2, 3, 4, 3, 2, 1, 2, 6, 6, 0, 1, 2]
+
+print(unique_list(l))
+print(unique_list('123'))
+print(set(l))
+
+#12
+def check_palindrom(s1): 
+    if (type(s1) == str):
+        f = lambda s: s[::-1]
+        s2 = f(s1)
+        if s1 == s2:
+            return True
+        else:
+            return False
+    else:
+        return "Необходимо ввести строку"
+        
+print(check_palindrom("оно"))
+print(check_palindrom("она"))
